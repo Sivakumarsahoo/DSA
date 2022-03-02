@@ -1,0 +1,19 @@
+ //sum of contiguous subarray with maximum sum
+ //kadane algorithm
+ 
+ long maxSubarraySum(int arr[], int n)
+ {
+        long sum=arr[0];
+        long count=arr[0];
+        for(int i=1;i<n;i++)
+        {
+            if(count<0)
+              count=arr[i];
+            else
+             count=count+arr[i];
+            if(count>sum)
+              sum=count;
+        }
+        return sum;
+        
+    }
